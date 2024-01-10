@@ -1,0 +1,32 @@
+
+.ui-tabs {
+  font-family: Arial;
+  margin: 20px;
+}
+
+.ui-tabs .ui-tabs-nav {
+  background-color: lightgrey;
+}
+
+.ui-tabs .ui-tabs-nav li {
+  display: inline-block;
+  margin: 0;
+  padding: 10px;
+}
+
+.ui-tabs .ui-tabs-nav a {
+  text-decoration: none;
+  padding: 10px;
+}
+
+.ui-tabs .ui-tabs-nav .ui-state-active {
+  background-color: #fff;
+}
+
+.ui-tabs .ui-tabs-panel {
+  display: inline-block;
+  vertical-align: top;
+  padding: 20px;
+  border: 1px solid grey;
+    border-radius: 5px;
+}

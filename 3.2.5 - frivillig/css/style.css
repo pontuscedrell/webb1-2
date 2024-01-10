@@ -1,0 +1,42 @@
+ul {
+      list-style: none;
+      padding: 0;
+      background-color: lightgreen;
+      display: flex;
+    }
+
+    li {
+      position: relative;
+    }
+
+    a {
+      display: block;
+      padding: 25px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      color: red;
+    }
+
+    /* Dropdown styling */
+    .dropdown {
+      display: none;
+      position: absolute;
+      background-color: #444;
+    }
+
+    li:hover .dropdown {
+      display: block;
+    }
+
+    li:hover {
+      background-color: black;
+    }
+
+    .dropdown a {
+      display: block;
+    }
+
+    .dropdown a:hover {
+      background-color: black;
+    }

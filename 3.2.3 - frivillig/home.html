@@ -1,0 +1,110 @@
+<!doctype HTML>
+<html>
+
+<head>
+	<meta name="author" content="Pontus Cedrell" />
+	<meta name="description" content="Startsida för min studentwebbplats" />
+	<meta name="generator" content="Sublime text 3" />
+	<meta name="keywords" content="HTML, CSS, DSV, student" />
+	<meta name="robots" content="noindex" />
+	<title>Hem...</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css?rnd=111" />
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+
+				<canvas id="ritning" width="500" height="1000"></canvas>
+				<a id="cdownload" href="#" download>Ladda ner bild </a>
+			</article>
+
+			
+
+
+	<script type="text/javascript">
+		
+		//deklarerar canvasen
+		var ctx = document.getElementById("ritning").getContext("2d");
+		image = new Image();
+		var cdownload = document.getElementById("cdownload");
+
+		//rak linje
+		ctx.beginPath();
+	    ctx.moveTo(25, 50);
+	    ctx.lineTo(450, 50);
+	    ctx.lineWidth = 3;
+	    ctx.strokeStyle = "green";
+	    ctx.stroke();
+
+	    // Rita en kurva
+	    ctx.beginPath();
+	    ctx.moveTo(25, 75);
+	    ctx.quadraticCurveTo(100, 150, 200, 75);
+	    ctx.lineWidth = 3;
+	    ctx.strokeStyle = "rgba(255, 0, 0, 0.5)"; //transparens
+	    ctx.stroke();
+
+	    //en beizerkurva
+		ctx.beginPath();
+		ctx.moveTo(25, 150);
+		ctx.bezierCurveTo(220, 260, 280, 110, 320, 240);
+		ctx.stroke();
+
+
+		ctx.strokeStyle = "blue";
+		ctx.shadowColor = "blue"; //skugga
+		ctx.shadowBlur = 15;
+
+		//text
+		ctx.font = 'bold 30px Arial';
+		ctx.strokeStyle = 'red';
+		ctx.lineWidth = 1;
+		ctx.strokeText("Här är text!", 200, 300);
+		ctx.stroke();
+
+		image.onload = function() {
+      		ctx.drawImage(image, 100, 500);
+    	};
+
+		image.src = "img/mouse.png";
+
+
+		var tdurl = ritning.toDataURL("image/png");
+
+		cdownload.href = tdurl;
+
+
+	</script>
+
+	
+
+	<script>
+		$(document).ready(function () {
+
+			$(document).ready(function () {
+				$('h1').click(function () {
+					$(this).css('color', 'red').text($(this).text() + '!');
+				});
+			});
+
+		});
+
+		$('#contact').click(function () {
+			$('footer').remove();
+		});
+
+		window.addEventListener('resize', function () {
+			const paragraph = document.querySelector('h1');
+			const h1 = paragraph.textContent;
+			console.log(h1);
+		});
+
+	</script>
+
+
+
+</body>
+
+</html>

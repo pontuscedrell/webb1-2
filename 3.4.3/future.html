@@ -1,0 +1,58 @@
+<!doctype HTML>
+<html>
+
+<head>
+	<meta name="author" content="Pontus Cedrell" />
+	<meta name="description" content="Beskriver mina framtida aktiviteter och intressen" />
+	<meta name="generator" content="Sublime text 3" />
+	<meta name="keywords" content="HTML, CSS, DSV, student" />
+	<meta name="robots" content="noindex" />
+	<title>Future</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css?rnd=111" />
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+	<section>
+
+
+				<label>Ange ett nr: </label>
+				<input type="text" id="nr1" /> <br>
+
+				<label>Ange ett nr: </label>
+				<input type="text" id="nr2" /> <br>
+
+				<button onclick="berakna()">Skicka</button>
+
+	<script>
+
+
+
+
+
+		//ajax - beräknar två värden. 
+
+		function berakna() {
+			var xml = new XMLHttpRequest();
+
+			var nr1 = document.getElementById('nr1').value; //hämtar från elementen
+			var nr2 = document.getElementById('nr2').value;
+
+			var url = 'https://people.dsv.su.se/~pierre/i/05_ass/ip3/3/3.4/3.4.3/example.php?number1=' + nr1 + '&number2=' + nr2; //skickar med värderna
+
+			xml.onreadystatechange = function () {
+				if (xml.readyState === 4 && xml.status === 200) { //kör bara om fåt ok från servern
+					var response = xml.responseText; //spara svaret
+					alert(response); //ge svaret till användaren
+				}
+			};
+
+			xml.open('GET', url, true); //gör get-förfrågan
+			xml.send(); //skickar datan
+		}
+
+	</script>
+</body>
+
+</html>

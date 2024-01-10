@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Map</title>
+
+   
+
+    <script>
+      //Det här är ett gammalt script som jag gjort i tidigare dagar. Den hämtar värden från wheretheiss och lägger ut dem på sidan
+    	getISS(); //kör scriptet
+
+
+
+
+    	async function getISS() { 
+			var response = await fetch('https://api.wheretheiss.at/v1/satellites/25544'); //hämtar värderna från api
+			var data = await response.json(); //hämtar värderna
+			var {latitude , longitude } = data; //lägger värderna i separata variabler
+
+			document.getElementById('lat').textContent = latitude; //lägger ut båda värderna i html-filen
+			document.getElementById('long').textContent = longitude;
+
+
+
+		}
+
+
+		
+
+
+    </script>
+
+
+   
+  </head>
+  <body>
+
+  	<h1> ISS </h1>
+
+	<p>
+		Lat: <span id="lat"></span><br>
+		Lat: <span id="long"></span>
+	</p>
+
+
+    <div id="map"></div> <!-- förut kunde jag få ut den på en karta men då jag inte har kvar google maps api så funkar det inte längre (tagit bort den koden) -->
+  </body>
+</html>
+		
+
+
