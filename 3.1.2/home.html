@@ -1,0 +1,50 @@
+<!doctype HTML>
+<html>
+
+
+
+	<script>
+
+
+
+		// en popupruta som körs när man landar på sidan
+		alert("Välkommen!");
+
+		var answer = confirm("vill du besöka min sida");
+		if (answer) {
+			console.log("Anv klickade ok");
+		} else {
+			console.log("Anv klickade avbryt");
+		}
+
+		var name = prompt("Vad heter du?");
+		console.log("Hej, " + name + "!");
+
+
+		var interval = setInterval(function () {
+			console.log("Det här meddelandet visas var 10:e sekund");
+		}, 10000);
+
+		var timeout = setTimeout(function () {
+			console.log("Det här meddelandet visas fördröjt med 5 sek");
+		}, 4000);
+
+		setTimeout(function () {
+			clearInterval(interval);
+			console.log("Äh nu blev det lite mycket. ");
+		}, 60000);
+
+		setTimeout(function () {
+			clearTimeout(timeout);
+			console.log("Vi stänger av denna också");
+		}, 60000);
+
+
+	</script>
+
+
+
+
+
+
+</html>
