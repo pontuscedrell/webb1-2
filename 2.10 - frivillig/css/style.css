@@ -1,0 +1,13 @@
+
+.div {
+  display: flex;
+  height: 500px;
+}
+
+.div img {
+  transition: transform 0.8s ease-in-out;
+}
+
+.div img:hover {
+  transform: rotate(360deg);
+}

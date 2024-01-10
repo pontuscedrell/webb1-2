@@ -1,0 +1,31 @@
+<!doctype HTML>
+<html>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+				<img id="float" src="img/no1.png" alt="placehoder img" onmouseover="mousehover(this);" />
+
+
+
+
+	<script>
+
+
+		//ändrar bild efter tre sekunder
+		$('#float').attr("src", 'img/no1.png');
+
+		setTimeout(function () {
+			$('#float').attr("src", 'img/no2.png');
+		}, 3000);
+
+
+		//ändrar bilden vid hover
+		function mousehover(img) {
+			img.src="img/no3.png";
+		}
+
+
+	</script>
+
+</body>
+
+</html>
